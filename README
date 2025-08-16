@@ -20,3 +20,16 @@ CC1101 works best powered from 3.3 V, and all logic pins should be 3.3 V lev
 
 
 So in short: EDGE_PIN in the code = GD00 on the module, and the SPI signals are straightforward (SCK, MOSI, MISO, CSN).
+
+
+Raspberry Pi Pico       CC1101 Module
+-----------------       --------------
+3.3V (VSYS or 3V3)  → VCC
+GND                  → GND
+GP2 (SPI0 SCK)       → SCK
+GP3 (SPI0 MOSI)      → MOSI
+GP4 (SPI0 MISO)      → MISO
+GP5                  → CSN (Chip Select)
+GP6                  → GD00 (EDGE_PIN / packet interrupt)
+
+
