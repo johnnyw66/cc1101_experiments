@@ -32,4 +32,11 @@ GP4 (SPI0 MISO)      → MISO
 GP5                  → CSN (Chip Select)
 GP6                  → GD00 (EDGE_PIN / packet interrupt)
 
+FT232H
+------
+SCLK - the SPI clock signal is on D0.
+MOSI - Microcontroller Out, Serial In is on D1.
+MISO - Microcontroller In, Serial Out is on D2.
+CS0 - Chip Select is on D3. This is not used by Blinka, instead use one of the GPIO pins from above (see example section).
+
 
