@@ -18,3 +18,5 @@ GDO2 can sometimes be left unconnected if you only need basic RX.
 
 CC1101 works best powered from 3.3 V, and all logic pins should be 3.3 V levels. If you use 5 V logic from a microcontroller, you’ll need a level shifter. Probably best to use 5v supply line on the Pico and use a buck convertor to produce 3.3v - to power the CC1101.
 
+
+So in short: EDGE_PIN in the code = GD00 on the module, and the SPI signals are straightforward (SCK, MOSI, MISO, CSN).
