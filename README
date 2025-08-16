@@ -1,1 +1,20 @@
+Here’s a breakdown of the named pins on the CC1101 module:
+
+Pin	Typical Function / Notes
+VCC	Power supply. Usually 3.3 V. Do not connect to 5 V directly — CC1101 is 3.3 V tolerant.
+GND	Ground. Connect to Pico’s GND.
+SCK	SPI Clock. Connect to your Pico’s SPI SCK pin.
+MOSI	SPI Master-Out-Slave-In. Data from Pico → CC1101.
+MISO	SPI Master-In-Slave-Out. Data from CC1101 → Pico.
+CSN	SPI Chip Select (active low). Connect to a GPIO on the Pico for selecting the CC1101.
+GDO0	This is a configurable digital output from the CC1101; often used to indicate packet received, sync detected, or for interrupts. You can connect this to a Pico GPIO to trigger captures.
+GDO2	Another configurable digital output; can indicate sync, FIFO status, or carrier sense, depending on CC1101 config. Often optional.
+
+Notes / tips:
+
+GD00 is usually the pin you want for edge-triggered interrupts when receiving OOK packets.
+
+GDO2 can sometimes be left unconnected if you only need basic RX.
+
+CC1101 works best powered from 3.3 V, and all logic pins should be 3.3 V levels. If you use 5 V logic from a microcontroller, you’ll need a level shifter. Probably best to use 5v supply line on the Pico and use a buck convertor to produce 3.3v - to power the CC1101.
 
